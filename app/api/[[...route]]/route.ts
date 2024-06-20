@@ -1,15 +1,15 @@
-import { Hono } from "hono";
-import { handle } from "hono/vercel";
-import { clerkMiddleware, getAuth } from "@hono/clerk-auth";
-export const runtime = "edge";
+import { Hono } from 'hono'
+import { handle } from 'hono/vercel'
+import accounts from './accounts'
+import { HTTPException } from 'hono/http-exception'
 
-const app = new Hono().basePath("/api");
+export const runtime = 'edge'
 
-app.get("/hello", (c) => {
-  return c.json({
-    message: "Hello Next.js!",
-  });
-});
+const app = new Hono().basePath('/api')
 
-export const GET = handle(app);
-export const POST = handle(app);
+const routes = app.route('/accounts', accounts)
+
+export const GET = handle(app)
+export const POST = handle(app)
+
+export type AppType = typeof routes

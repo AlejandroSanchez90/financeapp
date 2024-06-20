@@ -1,16 +1,16 @@
-import React from "react";
-import { Header } from "@/components/header";
+import React from 'react'
+import { Header } from '@/components/header'
 
 interface DashboardLayoutProps {
-  children: React.ReactNode;
+  children: React.ReactNode
 }
 const DashboardLayout = ({ children }: DashboardLayoutProps) => {
   return (
     <>
       <Header />
-      <main>Layout</main>
+      <main>{children}</main>
     </>
-  );
-};
+  )
+}
 
-export default DashboardLayout;
+export default DashboardLayout
