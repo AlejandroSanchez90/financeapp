@@ -6,13 +6,13 @@ import { Loader2, Plus } from 'lucide-react'
 import React from 'react'
 import { columns } from './columns'
 import { DataTable } from '@/components/data-table'
-import { useGetAccount } from '@/features/accounts/api/use-get-accounts'
+import { useGetAccounts } from '@/features/accounts/api/use-get-accounts'
 import { Skeleton } from '@/components/ui/skeleton'
 import { useBulkDeleteAccounts } from '@/features/accounts/api/use-bulk-delete'
 
 const AccountsPage = () => {
   const newAccount = useNewAccount()
-  const accountsQuery = useGetAccount()
+  const accountsQuery = useGetAccounts()
   const deleteAccounts = useBulkDeleteAccounts()
   const accounts = accountsQuery.data || []
   const isDisabled = accountsQuery.isLoading || deleteAccounts.isPending
