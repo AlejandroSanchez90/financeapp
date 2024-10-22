@@ -9,7 +9,7 @@ import {
 } from '@/components/ui/dialog'
 import { Button } from '@/components/ui/button'
 
-export const useConfirm = (title: string, message: string): [() => JSX.Element, () => Promise<unknown>] => {
+export const useConfirm = (message: string, title: string): [() => JSX.Element, () => Promise<unknown>] => {
   const [promise, setPromise] = useState<{ resolve: (value: boolean) => void } | null>(null)
 
   const confirm = () =>
@@ -23,6 +23,7 @@ export const useConfirm = (title: string, message: string): [() => JSX.Element, 
 
   const handleConfirm = () => {
     promise?.resolve(true)
+
     handleClose()
   }
 

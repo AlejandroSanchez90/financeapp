@@ -6,7 +6,6 @@ import {
   ColumnFiltersState,
   SortingState,
   getSortedRowModel,
-  klexRender,
   getPaginationRowModel,
   getFilteredRowModel,
   getCoreRowModel,
@@ -15,7 +14,7 @@ import {
   Row
 } from '@tanstack/react-table'
 
-import { Table, TableBody, TableCell, TableHead, TableHeader, TableRow } from '@/components/ui/table'
+import { TableRow, Table, TableBody, TableCell, TableHead, TableHeader } from '@/components/ui/table'
 import { Button } from './ui/button'
 import { Input } from '@/components/ui/input'
 import { Trash } from 'lucide-react'
